@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="base.NeuralNetworkTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-04T22:01:19" hostname="DESKTOP-1CER5HD" time="0.029">
+  <properties/>
+  <testcase name="addLayers()" classname="base.NeuralNetworkTests" time="0.023"/>
+  <testcase name="getNodes()" classname="base.NeuralNetworkTests" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

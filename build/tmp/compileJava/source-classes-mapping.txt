@@ -6,9 +6,9 @@ layers/Layer.java
  layers.Layer
 layers/HiddenLayer.java
  layers.HiddenLayer
+layers/InputLayer.java
+ layers.InputLayer
 layers/OutputLayer.java
  layers.OutputLayer
 base/NeuralNetwork.java
  base.NeuralNetwork
-layers/InputLayer.java
- layers.InputLayer

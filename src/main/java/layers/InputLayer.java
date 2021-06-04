@@ -7,7 +7,7 @@ public class InputLayer implements Layer<ArrayList<Float>>{
 
     @Override
     public ArrayList<Float> calc(ArrayList<Float> input) {
-        return input;
+        return (ArrayList<Float>) input;
     }
 
     @Override

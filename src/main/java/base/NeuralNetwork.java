@@ -8,33 +8,39 @@ import java.util.ArrayList;
 
 public class NeuralNetwork {
 
-    private ArrayList<Layer> layers = new ArrayList<>();
+    private final ArrayList<Layer<ArrayList<Float>> layers = new ArrayList<>();
 
-    public void addLayer(Layer layer){
+    private Layer<ArrayList<Float>> outputLayer = null;
+
+    public void addLayer(Layer<ArrayList<Float> layer){
         layers.add(layer);
     }
 
-    public ArrayList<Layer> getLayers(){
+    public void addOutputLayer(Layer<ArrayList<Float>> outputLayer){
+        this.outputLayer = outputLayer;
+    }
+
+    public ArrayList<Layer<ArrayList<Float>>> getLayers(){
         return layers;
     }
 
     public ArrayList<ArrayList<Node>> getNodes(){
         ArrayList<ArrayList<Node>> nodes2DList = new ArrayList<>();
 
-        for (Layer layer: layers) {
+        for (Layer<ArrayList<Float>> layer: layers) {
             nodes2DList.add(layer.getNodes());
         }
         return nodes2DList;
     }
 
-    public ArrayList<Float> score(Object input){
-        ArrayList<Float> output = (ArrayList<Float>) input;
+    public ArrayList<Integer> calc(ArrayList<Float> input){
+        Object output = input;
 
-        for (Layer layer : layers){
-            input = layer.calc(input);
+        for (Layer<ArrayList<Float>, ArrayList<?>> layer : layers){
+            output = layer.calc(output);
         }
 
-        return output;
+        return (ArrayList<Integer>) output;
     }
 
 }
