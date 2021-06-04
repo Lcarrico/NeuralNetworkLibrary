@@ -8,10 +8,14 @@ import java.util.ArrayList;
 
 public class NeuralNetwork {
 
-    ArrayList<Layer> layers = new ArrayList<>();
+    private ArrayList<Layer> layers = new ArrayList<>();
 
     public void addLayer(Layer layer){
         layers.add(layer);
+    }
+
+    public ArrayList<Layer> getLayers(){
+        return layers;
     }
 
     public ArrayList<ArrayList<Node>> getNodes(){
@@ -23,20 +27,12 @@ public class NeuralNetwork {
         return nodes2DList;
     }
 
-    public ArrayList<Integer> score(Object input){
-        ArrayList<Integer> output;
+    public ArrayList<Float> score(Object input){
+        ArrayList<Float> output = (ArrayList<Float>) input;
 
         for (Layer layer : layers){
             input = layer.calc(input);
         }
-
-        try {
-            output = (ArrayList<Integer>)input;
-        }
-        catch (ClassCastException c){
-            throw new RuntimeException("Neural Network needs to output an ArrayList<Integer>");
-        }
-
 
         return output;
     }

@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class InputLayer implements Layer{
 
     @Override
-    public ArrayList<Integer> calc(Object input) {
-        return (ArrayList<Integer>) input;
+    public ArrayList<Float> calc(Object input) {
+        return (ArrayList<Float>) input;
     }
 
     @Override
