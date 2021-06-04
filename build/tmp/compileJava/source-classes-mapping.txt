@@ -1,14 +1,14 @@
 layers/Node.java
  layers.Node
-layers/Layer.java
- layers.Layer
-layers/InputLayer.java
- layers.InputLayer
-layers/HiddenLayer.java
- layers.HiddenLayer
 utils/NodeGenerator.java
  utils.NodeGenerator
+layers/Layer.java
+ layers.Layer
+layers/HiddenLayer.java
+ layers.HiddenLayer
 layers/OutputLayer.java
  layers.OutputLayer
 base/NeuralNetwork.java
  base.NeuralNetwork
+layers/InputLayer.java
+ layers.InputLayer

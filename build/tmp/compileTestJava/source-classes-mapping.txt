@@ -1,0 +1,10 @@
+layers/HiddenLayerTests.java
+ layers.HiddenLayerTests
+layers/OutputLayerTests.java
+ layers.OutputLayerTests
+utils/NodeGeneratorTests.java
+ utils.NodeGeneratorTests
+base/NeuralNetworkTests.java
+ base.NeuralNetworkTests
+layers/InputLayerTests.java
+ layers.InputLayerTests

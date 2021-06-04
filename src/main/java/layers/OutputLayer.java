@@ -3,16 +3,15 @@ package layers;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class OutputLayer implements Layer{
+public class OutputLayer implements Layer<ArrayList<Float>>{
 
 
     @Override
-    public ArrayList<Integer> calc(Object input) {
+    public ArrayList<Integer> calc(ArrayList<Float> input) {
         ArrayList<Integer> sol = new ArrayList<>();
-        ArrayList<Float> inputNums = (ArrayList<Float>) input;
 
-        Float max_value = Collections.max(inputNums);
-        int max_index = inputNums.indexOf(max_value);
+        Float max_value = Collections.max(input);
+        int max_index = input.indexOf(max_value);
 
         sol.add(max_index);
 

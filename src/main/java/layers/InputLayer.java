@@ -3,11 +3,11 @@ package layers;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class InputLayer implements Layer{
+public class InputLayer implements Layer<ArrayList<Float>>{
 
     @Override
-    public ArrayList<Float> calc(Object input) {
-        return (ArrayList<Float>) input;
+    public ArrayList<Float> calc(ArrayList<Float> input) {
+        return input;
     }
 
     @Override
