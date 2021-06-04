@@ -52,7 +52,7 @@ public class NeuralNetworkTests {
             countNodes += nodeList.size();
         }
 
-        Assertions.assertEquals(17, countNodes;
+        Assertions.assertEquals(17, countNodes);
 
     }
 
