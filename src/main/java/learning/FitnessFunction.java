@@ -6,5 +6,5 @@ import java.util.ArrayList;
 
 @FunctionalInterface
 public interface FitnessFunction{
-     Float calculate(NeuralNetwork nn);
+     Float calculate(NeuralNetwork<ArrayList<Integer>> nn);
 }

@@ -1,16 +1,12 @@
 package utils;
 
 import base.NeuralNetwork;
-import layers.HiddenLayer;
-import layers.InputLayer;
-import layers.Node;
-import layers.OutputLayer;
+import layers.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 
 public class GeneticAlgorithmUtilTests {
     @Test
@@ -53,23 +49,23 @@ public class GeneticAlgorithmUtilTests {
 
     @Test
     void mutate(){
-        NeuralNetwork nn = new NeuralNetwork();
+        NeuralNetwork<ArrayList<Integer>> nn = new NeuralNetwork<>();
 
         InputLayer inputLayer = new InputLayer();
         HiddenLayer hiddenLayer1 = new HiddenLayer(5);
         HiddenLayer hiddenLayer2 = new HiddenLayer(7);
         HiddenLayer hiddenLayer3 = new HiddenLayer(5);
-        OutputLayer outputLayer = new OutputLayer();
+        OutputLayer<ArrayList<Float>, ArrayList<Integer>> outputLayer = new HighestOutputLayer();
 
         nn.addLayer(inputLayer);
         nn.addLayer(hiddenLayer1);
         nn.addLayer(hiddenLayer2);
         nn.addLayer(hiddenLayer3);
-        nn.addLayer(outputLayer);
+        nn.setOutputLayer(outputLayer);
 
         ArrayList<Node> nnNodes = GeneticAlgorithmUtil.flattenNodes(nn.getNodes());
 
-        NeuralNetwork mutatedNN = GeneticAlgorithmUtil.mutate(nn.clone(), 0.2f, 1);
+        NeuralNetwork<ArrayList<Integer>> mutatedNN = GeneticAlgorithmUtil.mutate(nn.clone(), 0.2f, 1);
         ArrayList<Node> mutatedNNnodes = GeneticAlgorithmUtil.flattenNodes((mutatedNN.getNodes()));
 
         Assertions.assertFalse(NodeUtil.compareNodeList(nnNodes, mutatedNNnodes));
@@ -82,7 +78,7 @@ public class GeneticAlgorithmUtilTests {
         HiddenLayer hiddenLayer1 = new HiddenLayer(5);
         HiddenLayer hiddenLayer2 = new HiddenLayer(7);
         HiddenLayer hiddenLayer3 = new HiddenLayer(5);
-        OutputLayer outputLayer = new OutputLayer();
+        OutputLayer<ArrayList<Float>, ArrayList<Integer>> outputLayer = new HighestOutputLayer();
         nn.addLayer(inputLayer);
         nn.addLayer(hiddenLayer1);
         nn.addLayer(hiddenLayer2);
@@ -94,7 +90,7 @@ public class GeneticAlgorithmUtilTests {
         hiddenLayer1 = new HiddenLayer(5);
         hiddenLayer2 = new HiddenLayer(7);
         hiddenLayer3 = new HiddenLayer(5);
-        outputLayer = new OutputLayer();
+        outputLayer = new HighestOutputLayer();
         nn2.addLayer(inputLayer);
         nn2.addLayer(hiddenLayer1);
         nn2.addLayer(hiddenLayer2);

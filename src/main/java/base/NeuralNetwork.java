@@ -2,11 +2,12 @@ package base;
 
 import layers.Layer;
 import layers.Node;
+import layers.OutputLayer;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class NeuralNetwork {
+public class NeuralNetwork<O> {
 
     String name;
     public NeuralNetwork(String name){
@@ -19,13 +20,13 @@ public class NeuralNetwork {
 
     private ArrayList<Layer<ArrayList<Float>>> layers = new ArrayList<>();
 
-    private Layer<ArrayList<Float>> outputLayer = null;
+    private OutputLayer<ArrayList<Float>, O> outputLayer = null;
 
     public void addLayer(Layer<ArrayList<Float>> layer){
         layers.add(layer);
     }
 
-    public void setOutputLayer(Layer<ArrayList<Float>> outputLayer){
+    public void setOutputLayer(OutputLayer<ArrayList<Float>, O> outputLayer){
         this.outputLayer = outputLayer;
     }
 
@@ -58,23 +59,23 @@ public class NeuralNetwork {
         this.setLayers(layers);
     }
 
-    public ArrayList<Integer> score(ArrayList<Float> input) {
+    public O calc(ArrayList<Float> input) {
         ArrayList<Float> processingLayer = input;
 
         for (Layer<ArrayList<Float>> layer : this.layers) {
             processingLayer = (ArrayList<Float>)layer.calc(processingLayer);
         }
 
-        return (ArrayList<Integer>) outputLayer.calc(processingLayer);
+        return outputLayer.calc(processingLayer);
     }
 
-    public NeuralNetwork clone() {
-        NeuralNetwork nn = new NeuralNetwork();
+    public NeuralNetwork<ArrayList<Integer>> clone() {
+        NeuralNetwork<ArrayList<Integer>> nn = new NeuralNetwork<>();
         for (Layer<ArrayList<Float>> layer: layers){
             nn.addLayer(layer.clone());
         }
         if (this.outputLayer != null)
-            nn.setOutputLayer(this.outputLayer.clone());
+            nn.setOutputLayer((OutputLayer<ArrayList<Float>, ArrayList<Integer>>) this.outputLayer.clone());
         return nn;
     }
 
