@@ -8,16 +8,29 @@ import java.util.ArrayList;
 
 public class NeuralNetwork {
 
-    private final ArrayList<Layer<ArrayList<Float>> layers = new ArrayList<>();
+    String name;
+    public NeuralNetwork(String name){
+        this.name = name;
+    }
+
+    public NeuralNetwork(){
+        this.name = "Neural Network";
+    }
+
+    private ArrayList<Layer<ArrayList<Float>>> layers = new ArrayList<>();
 
     private Layer<ArrayList<Float>> outputLayer = null;
 
-    public void addLayer(Layer<ArrayList<Float> layer){
+    public void addLayer(Layer<ArrayList<Float>> layer){
         layers.add(layer);
     }
 
-    public void addOutputLayer(Layer<ArrayList<Float>> outputLayer){
+    public void setOutputLayer(Layer<ArrayList<Float>> outputLayer){
         this.outputLayer = outputLayer;
+    }
+
+    public void setLayers(ArrayList<Layer<ArrayList<Float>>> layers){
+        this.layers = layers;
     }
 
     public ArrayList<Layer<ArrayList<Float>>> getLayers(){
@@ -33,14 +46,43 @@ public class NeuralNetwork {
         return nodes2DList;
     }
 
-    public ArrayList<Integer> calc(ArrayList<Float> input){
-        Object output = input;
+    public void setNodes(ArrayList<ArrayList<Node>> nodes){
+        ArrayList<Layer<ArrayList<Float>>> layers = new ArrayList<>();
 
-        for (Layer<ArrayList<Float>, ArrayList<?>> layer : layers){
-            output = layer.calc(output);
+        for (int i = 0; i < nodes.size(); i++){
+            Layer<ArrayList<Float>> tempLayer = this.layers.get(i);
+            tempLayer.setNodes(nodes.get(i));
+            layers.add(tempLayer);
         }
 
-        return (ArrayList<Integer>) output;
+        this.setLayers(layers);
+    }
+
+    public ArrayList<Integer> score(ArrayList<Float> input) {
+        ArrayList<Float> processingLayer = input;
+
+        for (Layer<ArrayList<Float>> layer : this.layers) {
+            processingLayer = (ArrayList<Float>)layer.calc(processingLayer);
+        }
+
+        return (ArrayList<Integer>) outputLayer.calc(processingLayer);
+    }
+
+    public NeuralNetwork clone() {
+        NeuralNetwork nn = new NeuralNetwork();
+        for (Layer<ArrayList<Float>> layer: layers){
+            nn.addLayer(layer.clone());
+        }
+        if (this.outputLayer != null)
+            nn.setOutputLayer(this.outputLayer.clone());
+        return nn;
+    }
+
+    @Override
+    public String toString() {
+        return name + "\n" +
+                "Layers =\n\t" + layers +
+                ", \n\tOutput Layer = " + outputLayer;
     }
 
 }

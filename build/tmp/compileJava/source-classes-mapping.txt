@@ -1,14 +1,23 @@
-layers/Node.java
- layers.Node
 utils/NodeGenerator.java
  utils.NodeGenerator
 layers/Layer.java
  layers.Layer
-layers/HiddenLayer.java
- layers.HiddenLayer
 layers/InputLayer.java
  layers.InputLayer
+layers/HiddenLayer.java
+ layers.HiddenLayer
+layers/Node.java
+ layers.Node
 layers/OutputLayer.java
  layers.OutputLayer
 base/NeuralNetwork.java
  base.NeuralNetwork
+utils/NodeUtil.java
+ utils.NodeUtil
+utils/GeneticAlgorithmUtil.java
+ utils.GeneticAlgorithmUtil
+ utils.GeneticAlgorithmUtil$1
+learning/FitnessFunction.java
+ learning.FitnessFunction
+learning/GeneticAlgorithm.java
+ learning.GeneticAlgorithm

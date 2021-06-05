@@ -5,7 +5,6 @@ import java.util.Collections;
 
 public class OutputLayer implements Layer<ArrayList<Float>>{
 
-
     @Override
     public ArrayList<Integer> calc(ArrayList<Float> input) {
         ArrayList<Integer> sol = new ArrayList<>();
@@ -15,11 +14,24 @@ public class OutputLayer implements Layer<ArrayList<Float>>{
         sol.add(max_index);
 
         return sol;
-
     }
 
     @Override
     public ArrayList<Node> getNodes() {
         return new ArrayList<Node>();
+    }
+
+    @Override
+    public void setNodes(ArrayList<Node> nodes) {
+
+    }
+    @Override
+    public Layer<ArrayList<Float>> clone() {
+        return new OutputLayer();
+    }
+
+    @Override
+    public String toString() {
+        return "OutputLayer";
     }
 }
