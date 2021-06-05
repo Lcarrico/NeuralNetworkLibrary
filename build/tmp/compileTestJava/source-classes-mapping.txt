@@ -4,7 +4,13 @@ layers/OutputLayerTests.java
  layers.OutputLayerTests
 utils/NodeGeneratorTests.java
  utils.NodeGeneratorTests
-base/NeuralNetworkTests.java
- base.NeuralNetworkTests
 layers/InputLayerTests.java
  layers.InputLayerTests
+base/NeuralNetworkTests.java
+ base.NeuralNetworkTests
+learning/GeneticAlgorithmTests.java
+ learning.GeneticAlgorithmTests
+utils/GeneticAlgorithmUtilTests.java
+ utils.GeneticAlgorithmUtilTests
+utils/FitnessFunctionsTests.java
+ utils.FitnessFunctionsTests

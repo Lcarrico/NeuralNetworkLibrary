@@ -9,7 +9,7 @@ public class OutputLayerTests {
 
     @Test
     void getNodes(){
-        OutputLayer outputLayer = new OutputLayer();
+        OutputLayer<ArrayList<Float>, ArrayList<Integer>> outputLayer = new HighestOutputLayer();
 
         Assertions.assertEquals(0, outputLayer.getNodes().size());
 
@@ -17,7 +17,7 @@ public class OutputLayerTests {
 
     @Test
     void calc(){
-        OutputLayer outputLayer = new OutputLayer();
+        OutputLayer<ArrayList<Float>, ArrayList<Integer>> outputLayer = new HighestOutputLayer();
 
         ArrayList<Float> input = new ArrayList<>();
         input.add(23.4f);

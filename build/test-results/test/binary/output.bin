@@ -1,0 +1,21 @@
+%Teaching the NN the AND expression.
+Training now...
+
+Best NN: Neural Network
+	Layers =
+	[InputLayer, 
+	Hidden Layer{
+<		nodes=[Node{weight=1.3191371}, Node{weight=1.6482621}]}, 
+	Hidden Layer{
+q		nodes=[Node{weight=1.2459452}, Node{weight=-0.21125233}, Node{weight=-0.038500488}, Node{weight=1.5660644}]}, 
+	Hidden Layer{
+Ö		nodes=[Node{weight=1.0763626}, Node{weight=-0.25160408}, Node{weight=0.49459714}, Node{weight=-0.0012969971}, Node{weight=1.2837045}, Node{weight=0.39393097}, Node{weight=-0.023167253}, Node{weight=0.928067}]}, 
+	Hidden Layer{
+(		nodes=[Node{weight=-0.018441916}]}], 
+$	Output Layer = RoundedOutputLayer
+
+Outputs from Best NN: 
+[0.0, 0.0] -> [0]
+[0.0, 1.0] -> [-1]
+[1.0, 0.0] -> [-1]
+[1.0, 1.0] -> [-1]
