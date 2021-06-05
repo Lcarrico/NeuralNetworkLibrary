@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="utils.GeneticAlgorithmUtilTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-06-05T18:49:53" hostname="DESKTOP-1CER5HD" time="0.008">
+<testsuite name="utils.GeneticAlgorithmUtilTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-06-05T19:45:40" hostname="DESKTOP-1CER5HD" time="0.018">
   <properties/>
-  <testcase name="mutate()" classname="utils.GeneticAlgorithmUtilTests" time="0.002"/>
-  <testcase name="getSampleNodes()" classname="utils.GeneticAlgorithmUtilTests" time="0.001"/>
+  <testcase name="mutate()" classname="utils.GeneticAlgorithmUtilTests" time="0.003"/>
+  <testcase name="getSampleNodes()" classname="utils.GeneticAlgorithmUtilTests" time="0.002"/>
   <testcase name="floatReverseComparatorTest()" classname="utils.GeneticAlgorithmUtilTests" time="0.001"/>
-  <testcase name="flattenNodesTest()" classname="utils.GeneticAlgorithmUtilTests" time="0.001"/>
-  <testcase name="crossover()" classname="utils.GeneticAlgorithmUtilTests" time="0.001"/>
+  <testcase name="flattenNodesTest()" classname="utils.GeneticAlgorithmUtilTests" time="0.002"/>
+  <testcase name="crossover()" classname="utils.GeneticAlgorithmUtilTests" time="0.002"/>
   <system-out><![CDATA[[4.22, 3.14159, 2.15]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
