@@ -3,6 +3,9 @@ package layers;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+/**
+ * This is a base input layer and simply outputs the input values received.
+ */
 public class InputLayer implements Layer<ArrayList<Float>>{
 
     @Override
@@ -20,6 +23,7 @@ public class InputLayer implements Layer<ArrayList<Float>>{
 
     }
 
+    @Override
     public Layer<ArrayList<Float>> clone() {
         return new InputLayer();
     }

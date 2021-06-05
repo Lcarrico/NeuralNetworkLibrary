@@ -1,26 +1,22 @@
 utils/NodeGenerator.java
  utils.NodeGenerator
-layers/Layer.java
- layers.Layer
-layers/InputLayer.java
- layers.InputLayer
-layers/HiddenLayer.java
- layers.HiddenLayer
+utils/ListUtil.java
+ utils.ListUtil
 layers/Node.java
  layers.Node
 utils/NodeUtil.java
  utils.NodeUtil
 layers/RoundedOutputLayer.java
  layers.RoundedOutputLayer
-layers/HighestOutputLayer.java
- layers.HighestOutputLayer
-layers/OutputLayer.java
- layers.OutputLayer
-utils/ListUtil.java
- utils.ListUtil
 utils/GeneticAlgorithmUtil.java
  utils.GeneticAlgorithmUtil
  utils.GeneticAlgorithmUtil$1
+layers/Layer.java
+ layers.Layer
+layers/OutputLayer.java
+ layers.OutputLayer
+layers/InputLayer.java
+ layers.InputLayer
 utils/FitnessFunctions.java
  utils.FitnessFunctions
  utils.FitnessFunctions$1
@@ -30,3 +26,7 @@ learning/FitnessFunction.java
  learning.FitnessFunction
 learning/GeneticAlgorithm.java
  learning.GeneticAlgorithm
+layers/HiddenLayer.java
+ layers.HiddenLayer
+layers/HighestOutputLayer.java
+ layers.HighestOutputLayer

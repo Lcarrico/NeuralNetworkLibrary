@@ -3,6 +3,9 @@ package layers;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * This class is the output layer for a neural network where the index of the highest value is returned.
+ */
 public class HighestOutputLayer implements OutputLayer<ArrayList<Float>, ArrayList<Integer>>{
 
     @Override

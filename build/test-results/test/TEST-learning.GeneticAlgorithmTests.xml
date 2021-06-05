@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="learning.GeneticAlgorithmTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-05T17:34:01" hostname="DESKTOP-1CER5HD" time="0.053">
+<testsuite name="learning.GeneticAlgorithmTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-05T18:49:53" hostname="DESKTOP-1CER5HD" time="0.02">
   <properties/>
-  <testcase name="evolveTest()" classname="learning.GeneticAlgorithmTests" time="0.053"/>
+  <testcase name="evolveTest()" classname="learning.GeneticAlgorithmTests" time="0.016"/>
+  <testcase name="mutateAllTest()" classname="learning.GeneticAlgorithmTests" time="0.001"/>
   <system-out><![CDATA[Teaching the NN the AND expression.
 Training now...
 
@@ -9,20 +10,20 @@ Best NN: Neural Network
 Layers =
 	[InputLayer, 
 	Hidden Layer{
-		nodes=[Node{weight=1.3191371}, Node{weight=1.6482621}]}, 
+		nodes=[Node{weight=1.8674378}, Node{weight=-0.02046305}]}, 
 	Hidden Layer{
-		nodes=[Node{weight=1.2459452}, Node{weight=-0.21125233}, Node{weight=-0.038500488}, Node{weight=1.5660644}]}, 
+		nodes=[Node{weight=0.6762609}, Node{weight=0.3747992}, Node{weight=-0.6941739}, Node{weight=-0.17619365}]}, 
 	Hidden Layer{
-		nodes=[Node{weight=1.0763626}, Node{weight=-0.25160408}, Node{weight=0.49459714}, Node{weight=-0.0012969971}, Node{weight=1.2837045}, Node{weight=0.39393097}, Node{weight=-0.023167253}, Node{weight=0.928067}]}, 
+		nodes=[Node{weight=-0.56002754}, Node{weight=0.9611832}, Node{weight=1.2126894}, Node{weight=-0.09471142}, Node{weight=-0.86631095}, Node{weight=0.40981042}, Node{weight=0.9324098}, Node{weight=0.58016026}]}, 
 	Hidden Layer{
-		nodes=[Node{weight=-0.018441916}]}], 
+		nodes=[Node{weight=-0.123714864}]}], 
 	Output Layer = RoundedOutputLayer
 
 Outputs from Best NN: 
 [0.0, 0.0] -> [0]
-[0.0, 1.0] -> [-1]
-[1.0, 0.0] -> [-1]
-[1.0, 1.0] -> [-1]
+[0.0, 1.0] -> [0]
+[1.0, 0.0] -> [0]
+[1.0, 1.0] -> [0]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

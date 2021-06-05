@@ -1,11 +1,11 @@
 layers/HiddenLayerTests.java
  layers.HiddenLayerTests
-layers/OutputLayerTests.java
- layers.OutputLayerTests
-utils/NodeGeneratorTests.java
- utils.NodeGeneratorTests
 layers/InputLayerTests.java
  layers.InputLayerTests
+utils/NodeGeneratorTests.java
+ utils.NodeGeneratorTests
+layers/OutputLayerTests.java
+ layers.OutputLayerTests
 base/NeuralNetworkTests.java
  base.NeuralNetworkTests
 learning/GeneticAlgorithmTests.java
