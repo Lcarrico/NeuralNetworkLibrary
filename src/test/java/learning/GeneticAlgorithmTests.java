@@ -3,6 +3,8 @@ package learning;
 import base.NeuralNetwork;
 import layers.*;
 import org.junit.jupiter.api.Test;
+import utils.FitnessFunctions;
+import utils.ListUtil;
 
 import java.util.ArrayList;
 
@@ -11,51 +13,33 @@ public class GeneticAlgorithmTests {
     @Test
     void evolveTest(){
         NeuralNetwork<ArrayList<Integer>> nn = new NeuralNetwork<ArrayList<Integer>>("Test Network");
-        nn.addLayer(new InputLayer());
-        nn.addLayer(new HiddenLayer(2));
-        nn.addLayer(new HiddenLayer(4));
-        nn.addLayer(new HiddenLayer(8));
-        nn.addLayer(new HiddenLayer(1));
+        nn.addLayers(
+                new InputLayer(),
+                new HiddenLayer(2),
+                new HiddenLayer(4),
+                new HiddenLayer(8),
+                new HiddenLayer(1)
+        );
         nn.setOutputLayer(new RoundedOutputLayer());
 
-        ArrayList<Float> input1 = new ArrayList<>();
-        input1.add(0f);
-        input1.add(0f);
+        Float[][] inputsArray = {{0f, 0f}, {0f, 1f}, {1f, 0f}, {1f, 1f}};
+        ArrayList<ArrayList<Float>> inputsList = ListUtil.twoDArrayToList(inputsArray);
 
-        ArrayList<Float> input2 = new ArrayList<>();
-        input2.add(0f);
-        input2.add(1f);
+        Integer[][] outputsArray = {{0}, {0}, {0}, {1}};
+        ArrayList<ArrayList<Integer>> outputsList = ListUtil.twoDArrayToList(outputsArray);
 
-        ArrayList<Float> input3 = new ArrayList<>();
-        input3.add(1f);
-        input3.add(0f);
+        GeneticAlgorithm ga = new GeneticAlgorithm(nn, 20, FitnessFunctions.NegativeSumOfAbsoluteDifferences(inputsList, outputsList));
 
-        ArrayList<Float> input4 = new ArrayList<>();
-        input4.add(1f);
-        input4.add(1f);
+        System.out.println("Teaching the NN the AND expression.");
+        System.out.println("Training now...");
+        ga.evolve(0.2f, 0.5f, 0.5f);
 
-        GeneticAlgorithm ga = new GeneticAlgorithm(nn, 20, (NeuralNetwork<ArrayList<Integer>> neuralNetwork) -> {
-            float score = 0f;
+        System.out.println("\nBest NN: " + ga.bestNeuralNetwork);
 
-            score -= Math.abs(neuralNetwork.calc(input1).get(0));
-            score -= Math.abs(neuralNetwork.calc(input2).get(0));
-            score -= Math.abs(neuralNetwork.calc(input3).get(0));
-            score -= Math.abs(neuralNetwork.calc(input4).get(0) - 1);
-
-            return score;
-        });
-
-        for (int i = 0; i < 10; i++){
-            ga.evolve(0.25f, 0.9f, 0.1f);
-            System.out.println(ga.scores);
+        System.out.println("\nOutputs from Best NN: ");
+        for (ArrayList<Float> input : inputsList){
+            System.out.println(input + " -> " + ga.bestNeuralNetwork.calc(input));
         }
-
-        System.out.println("Best NN: " + ga.bestNeuralNetwork);
-        System.out.println("0 0 -> " +  ga.bestNeuralNetwork.calc(input1));
-        System.out.println("0 1 -> " +  ga.bestNeuralNetwork.calc(input2));
-        System.out.println("1 0 -> " +  ga.bestNeuralNetwork.calc(input3));
-        System.out.println("1 1 -> " +  ga.bestNeuralNetwork.calc(input4));
-
     }
 
     @Test

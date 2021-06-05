@@ -101,7 +101,7 @@ public class GeneticAlgorithm {
     public void evolve(float topPercentToKeep, float mutatePercent, float mutateMagnitude){
 
         ArrayList<Float> scores = getAllScores();
-        ArrayList<NeuralNetwork<ArrayList<Integer>>> topNNs = getTopNNs(scores, .5f);
+        ArrayList<NeuralNetwork<ArrayList<Integer>>> topNNs = getTopNNs(scores, topPercentToKeep);
         NeuralNetwork<ArrayList<Integer>> newNetwork;
 
         Random random = new Random();

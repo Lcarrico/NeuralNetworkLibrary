@@ -26,6 +26,12 @@ public class NeuralNetwork<O> {
         layers.add(layer);
     }
 
+    public void addLayers(Layer<ArrayList<Float>>... layers){
+        for (Layer<ArrayList<Float>> layer : layers){
+            addLayer(layer);
+        }
+    }
+
     public void setOutputLayer(OutputLayer<ArrayList<Float>, O> outputLayer){
         this.outputLayer = outputLayer;
     }
@@ -67,6 +73,16 @@ public class NeuralNetwork<O> {
         }
 
         return outputLayer.calc(processingLayer);
+    }
+
+    public ArrayList<O> calcAll(ArrayList<ArrayList<Float>> inputs){
+        ArrayList<O> allCalculated = new ArrayList<>();
+
+        for (ArrayList<Float> input : inputs){
+            O calculated = calc(input);
+            allCalculated.add(calculated);
+        }
+        return allCalculated;
     }
 
     public NeuralNetwork<ArrayList<Integer>> clone() {

@@ -6,9 +6,11 @@ utils/NodeGeneratorTests.java
  utils.NodeGeneratorTests
 layers/InputLayerTests.java
  layers.InputLayerTests
-utils/GeneticAlgorithmUtilTests.java
- utils.GeneticAlgorithmUtilTests
 base/NeuralNetworkTests.java
  base.NeuralNetworkTests
 learning/GeneticAlgorithmTests.java
  learning.GeneticAlgorithmTests
+utils/GeneticAlgorithmUtilTests.java
+ utils.GeneticAlgorithmUtilTests
+utils/FitnessFunctionsTests.java
+ utils.FitnessFunctionsTests

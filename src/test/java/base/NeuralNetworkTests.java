@@ -3,8 +3,12 @@ package base;
 import layers.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import utils.GeneticAlgorithmUtil;
+import utils.ListUtil;
+import utils.NodeUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NeuralNetworkTests {
 
@@ -33,12 +37,7 @@ public class NeuralNetworkTests {
         nn.addLayer(new HiddenLayer(2));
         nn.addLayer(new HiddenLayer(1));
 
-        System.out.println(nnNodes);
-        System.out.println(nn.getNodes());
-
-        System.out.println(nn);
         nn.setNodes(nnNodes);
-        System.out.println(nn);
 
         nnNodes = new ArrayList<>();
 
@@ -52,9 +51,15 @@ public class NeuralNetworkTests {
 
         layerNodes = new ArrayList<>();
         layerNodes.add(new Node(0.5f));
+
         nnNodes.add(layerNodes);
         nn.setNodes(nnNodes);
-        System.out.println(nn);
+
+        ArrayList<Node> addedNodesFlattened = GeneticAlgorithmUtil.flattenNodes(nn.getNodes());
+        ArrayList<Node> changedToNodes = GeneticAlgorithmUtil.flattenNodes(nnNodes);
+
+        Assertions.assertTrue(NodeUtil.compareNodeList(addedNodesFlattened, changedToNodes));
+
     }
 
 
@@ -89,7 +94,50 @@ public class NeuralNetworkTests {
         input.add(1f);
 
         int calculatedValue = nn.calc(input).get(0);
-        System.out.println(calculatedValue);
+        Assertions.assertEquals(2, calculatedValue);
+    }
+
+    @Test
+    void calcAllTest(){
+        ArrayList<ArrayList<Node>> nnNodes = new ArrayList<>();
+        ArrayList<Node> layerNodes;
+
+        layerNodes = new ArrayList<>();
+        nnNodes.add(new ArrayList<>());
+
+        layerNodes.add(new Node(0.5f));
+        layerNodes.add(new Node(0.5f));
+        nnNodes.add(layerNodes);
+
+        layerNodes = new ArrayList<>();
+        layerNodes.add(new Node(1f));
+        nnNodes.add(layerNodes);
+
+        NeuralNetwork<ArrayList<Integer>> nn = new NeuralNetwork<>("Test Network");
+
+        nn.addLayer(new InputLayer());
+        nn.addLayer(new HiddenLayer(2));
+        nn.addLayer(new HiddenLayer(1));
+        nn.setOutputLayer(new RoundedOutputLayer());
+        nn.setNodes(nnNodes);
+
+        System.out.println(nn);
+
+        Float[][] data = {{0f, 0f}, {0f, 1f}, {1f, 0f}, {1f, 1f}};
+
+        ArrayList<ArrayList<Float>> inputs = ListUtil.<Float>twoDArrayToList(data);
+
+        ArrayList<ArrayList<Integer>> calculatedValues = nn.calcAll(inputs);
+
+        System.out.println(inputs);
+        System.out.println(calculatedValues);
+
+        Integer[] expectedValues = {0, 1, 1, 2};
+
+        for (int i = 0; i < calculatedValues.size(); i++){
+            Assertions.assertEquals(expectedValues[i], calculatedValues.get(i).get(0));
+        }
+
     }
 
     @Test
