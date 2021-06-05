@@ -11,44 +11,47 @@ import java.util.Comparator;
 import java.util.Random;
 
 public class GeneticAlgorithm {
-    private FitnessFunction scoring;
 
-    // TODO save most recent scores
+    public NeuralNetwork<ArrayList<Integer>> bestNeuralNetwork;
 
-    private ArrayList<NeuralNetwork> neuralNetworkArrayList;
-    private NeuralNetwork base;
-    private int population;
+    private final FitnessFunction scoring;
+    public ArrayList<Float> scores = new ArrayList<>();
+    private ArrayList<NeuralNetwork<ArrayList<Integer>>> neuralNetworkArrayList;
+    private NeuralNetwork<ArrayList<Integer>> base;
+    private final int population;
 
-    public GeneticAlgorithm(NeuralNetwork nn, int population, FitnessFunction scoring) {
+    public GeneticAlgorithm(NeuralNetwork<ArrayList<Integer>> nn, int population, FitnessFunction scoring) {
         this.scoring = scoring;
         this.neuralNetworkArrayList = new ArrayList<>();
         this.base = nn;
         this.population = population;
 
         for (int i = 0; i < population; i++){
-            neuralNetworkArrayList.add(this.base.clone());
+            neuralNetworkArrayList.add(GeneticAlgorithmUtil.mutate(this.base.clone(), 1f, 1f));
         }
+
+        this.bestNeuralNetwork = neuralNetworkArrayList.get(0);
     }
 
-    public ArrayList<NeuralNetwork> getNeuralNetworkArrayList() {
+    public ArrayList<NeuralNetwork<ArrayList<Integer>>> getNeuralNetworkArrayList() {
         return neuralNetworkArrayList;
     }
 
-    public void setNeuralNetworkArrayList(ArrayList<NeuralNetwork> neuralNetworkArrayList) {
+    public void setNeuralNetworkArrayList(ArrayList<NeuralNetwork<ArrayList<Integer>>> neuralNetworkArrayList) {
         this.neuralNetworkArrayList = neuralNetworkArrayList;
     }
 
-    public NeuralNetwork getBase() {
+    public NeuralNetwork<ArrayList<Integer>> getBase() {
         return base;
     }
 
-    public void setBase(NeuralNetwork base) {
+    public void setBase(NeuralNetwork<ArrayList<Integer>> base) {
         this.base = base;
     }
 
     // mutate function
     public void mutateAll(float percent, float magnitude){
-        NeuralNetwork mutatedNN;
+        NeuralNetwork<ArrayList<Integer>> mutatedNN;
         for (int i = 0; i < neuralNetworkArrayList.size(); i++){
             mutatedNN = GeneticAlgorithmUtil.mutate(neuralNetworkArrayList.get(i), percent, magnitude);
             this.neuralNetworkArrayList.set(i, mutatedNN);
@@ -57,33 +60,49 @@ public class GeneticAlgorithm {
 
     public ArrayList<Float> getAllScores(){
         ArrayList<Float> scores = new ArrayList<>();
-        for (NeuralNetwork nn : this.neuralNetworkArrayList){
+        for (NeuralNetwork<ArrayList<Integer>> nn : this.neuralNetworkArrayList){
             scores.add(scoring.calculate(nn));
         }
+
+        this.scores = scores;
+
         return scores;
     }
 
-    public ArrayList<NeuralNetwork> getTopNNs(ArrayList<Float> scores, Float percent){
-        ArrayList<NeuralNetwork> topNNs = new ArrayList<>();
+    public ArrayList<NeuralNetwork<ArrayList<Integer>>> getTopNNs(ArrayList<Float> scores, Float percent){
+        ArrayList<Float> scoresCopy = new ArrayList<>(scores);
+
+        ArrayList<NeuralNetwork<ArrayList<Integer>>> topNNs = new ArrayList<>();
         ArrayList<Float> topScores = new ArrayList<>();
         ArrayList<Float> sortedScores = new ArrayList<>(scores);
-        Collections.sort(sortedScores, GeneticAlgorithmUtil.floatReverseComparator);
+        sortedScores.sort(GeneticAlgorithmUtil.floatReverseComparator);
 
-        int sampleScores = Math.round(scores.size() * percent);
-
-        for (int i = 0; i < scores.size(); i++){
-            if (scores.get(i) > percent){
-                topNNs.add(this.neuralNetworkArrayList.get(i));
-            }
+        int sampleScoresCount = Math.round(scores.size() * percent);
+        ArrayList<Float> sampleScores = new ArrayList<>();
+        for (int i = 0; i < sampleScoresCount; i++){
+            sampleScores.add(sortedScores.get(i));
         }
+
+        ArrayList<Integer> sampleScoresIndices = new ArrayList<>();
+        for (Float score: sampleScores){
+            sampleScoresIndices.add(scoresCopy.indexOf(score));
+            scoresCopy.remove(score);
+        }
+
+        for (int index: sampleScoresIndices){
+            topNNs.add(this.neuralNetworkArrayList.get(index));
+        }
+
+        this.bestNeuralNetwork = topNNs.get(0);
+
         return topNNs;
     }
 
-    public NeuralNetwork evolve(float topPercentToKeep, float mutatePercent, float mutateMagnitude){
+    public void evolve(float topPercentToKeep, float mutatePercent, float mutateMagnitude){
 
         ArrayList<Float> scores = getAllScores();
-        ArrayList<NeuralNetwork> topNNs = getTopNNs(scores, .5f);
-        NeuralNetwork newNetwork;
+        ArrayList<NeuralNetwork<ArrayList<Integer>>> topNNs = getTopNNs(scores, .5f);
+        NeuralNetwork<ArrayList<Integer>> newNetwork;
 
         Random random = new Random();
         int randomIndex1;
@@ -99,15 +118,8 @@ public class GeneticAlgorithm {
             newNetwork = GeneticAlgorithmUtil.crossover(topNNs.get(randomIndex1), topNNs.get(randomIndex2));
             newNetwork = GeneticAlgorithmUtil.mutate(newNetwork, mutatePercent, mutateMagnitude);
 
+            this.neuralNetworkArrayList.set(i, newNetwork);
         }
-
-
-
-
-
-//        NeuralNetwork child = GeneticAlgorithmUtil.crossover(nn1, nn2);
-        NeuralNetwork child = null;
-        return GeneticAlgorithmUtil.mutate(child, mutatePercent, mutateMagnitude);
 
     }
 

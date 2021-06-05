@@ -51,7 +51,7 @@ public class GeneticAlgorithmUtil {
     }
 
 
-    public static NeuralNetwork mutate(NeuralNetwork nn, float percent, float magnitude){
+    public static NeuralNetwork<ArrayList<Integer>> mutate(NeuralNetwork<ArrayList<Integer>> nn, float percent, float magnitude){
         ArrayList<ArrayList<Node>> nodes = nn.getNodes();
         ArrayList<Node> flattenedNodes = GeneticAlgorithmUtil.flattenNodes(nodes);
         ArrayList<Integer> sampledIndices = GeneticAlgorithmUtil.getSampleIndices(flattenedNodes, percent);
@@ -79,8 +79,8 @@ public class GeneticAlgorithmUtil {
         return nn;
     }
 
-    public static NeuralNetwork crossover(NeuralNetwork nn1, NeuralNetwork nn2){
-        NeuralNetwork child = nn1.clone();
+    public static NeuralNetwork<ArrayList<Integer>> crossover(NeuralNetwork<ArrayList<Integer>> nn1, NeuralNetwork<ArrayList<Integer>> nn2){
+        NeuralNetwork<ArrayList<Integer>> child = nn1.clone();
 
         ArrayList<ArrayList<Node>> nn1Nodes = nn1.getNodes();
         ArrayList<ArrayList<Node>> nn2Nodes = nn2.getNodes();
@@ -116,4 +116,5 @@ public class GeneticAlgorithmUtil {
             return o2.compareTo(o1);
         }
     };
+
 }

@@ -32,11 +32,9 @@ public class HiddenLayer implements Layer<ArrayList<Float>>{
 
         for (Node node : nodes){
             float total = 0;
-
             for (Float value : input){
                 total += node.getWeight() * value;
             }
-
             outputNums.add(total);
         }
 
