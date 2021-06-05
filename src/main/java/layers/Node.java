@@ -19,4 +19,15 @@ public class Node {
     public void setWeight(float weight) {
         this.weight = weight;
     }
+
+    public Node clone(){
+        return new Node(getWeight());
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "weight=" + weight +
+                '}';
+    }
 }

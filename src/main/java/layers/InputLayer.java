@@ -14,4 +14,18 @@ public class InputLayer implements Layer<ArrayList<Float>>{
     public ArrayList<Node> getNodes() {
         return new ArrayList<Node>();
     }
+
+    @Override
+    public void setNodes(ArrayList<Node> nodes) {
+
+    }
+
+    public Layer<ArrayList<Float>> clone() {
+        return new InputLayer();
+    }
+
+    @Override
+    public String toString() {
+        return "InputLayer";
+    }
 }
