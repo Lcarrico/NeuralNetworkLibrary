@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="layers.OutputLayerTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-05T19:45:39" hostname="DESKTOP-1CER5HD" time="0.003">
+<testsuite name="layers.OutputLayerTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-05T20:21:20" hostname="DESKTOP-1CER5HD" time="0.002">
   <properties/>
-  <testcase name="calc()" classname="layers.OutputLayerTests" time="0.002"/>
+  <testcase name="calc()" classname="layers.OutputLayerTests" time="0.001"/>
   <testcase name="getNodes()" classname="layers.OutputLayerTests" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

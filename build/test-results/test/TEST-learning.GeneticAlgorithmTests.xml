@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="learning.GeneticAlgorithmTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-05T19:45:39" hostname="DESKTOP-1CER5HD" time="0.022">
+<testsuite name="learning.GeneticAlgorithmTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-05T20:21:20" hostname="DESKTOP-1CER5HD" time="0.013">
   <properties/>
-  <testcase name="evolveTest()" classname="learning.GeneticAlgorithmTests" time="0.021"/>
-  <testcase name="mutateAllTest()" classname="learning.GeneticAlgorithmTests" time="0.0"/>
+  <testcase name="evolveTest()" classname="learning.GeneticAlgorithmTests" time="0.01"/>
+  <testcase name="mutateAllTest()" classname="learning.GeneticAlgorithmTests" time="0.001"/>
   <system-out><![CDATA[Teaching the NN the AND expression.
 Training now...
 
@@ -10,20 +10,20 @@ Best NN: Neural Network
 Layers =
 	[InputLayer, 
 	Hidden Layer{
-		nodes=[Node{weight=1.058116}, Node{weight=0.14106536}]}, 
+		nodes=[Node{weight=0.7528196}, Node{weight=-0.43473005}]}, 
 	Hidden Layer{
-		nodes=[Node{weight=0.0383929}, Node{weight=0.108670056}, Node{weight=1.4125656}, Node{weight=-0.46052575}]}, 
+		nodes=[Node{weight=0.7120341}, Node{weight=0.3407234}, Node{weight=1.2226882}, Node{weight=-0.27073675}]}, 
 	Hidden Layer{
-		nodes=[Node{weight=0.37402207}, Node{weight=-0.9408987}, Node{weight=0.9269055}, Node{weight=-0.06399673}, Node{weight=-0.3095855}, Node{weight=-0.25754374}, Node{weight=-0.38398498}, Node{weight=0.7901183}]}, 
+		nodes=[Node{weight=0.025651991}, Node{weight=-0.045571268}, Node{weight=0.81828576}, Node{weight=1.1697651}, Node{weight=-0.10849953}, Node{weight=-0.47883022}, Node{weight=0.065859675}, Node{weight=-0.25644898}]}, 
 	Hidden Layer{
-		nodes=[Node{weight=1.6814117}]}], 
+		nodes=[Node{weight=0.08425474}]}], 
 	Output Layer = RoundedOutputLayer
 
 Outputs from Best NN: 
 [0.0, 0.0] -> [0]
 [0.0, 1.0] -> [0]
 [1.0, 0.0] -> [0]
-[1.0, 1.0] -> [1]
+[1.0, 1.0] -> [0]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
