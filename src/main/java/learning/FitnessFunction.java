@@ -10,5 +10,10 @@ import java.util.ArrayList;
  */
 @FunctionalInterface
 public interface FitnessFunction{
+     /**
+      * This method will calculate the fitness score of a neural network.
+      * @param nn This parameter is the NeuralNetwork input to calculate the fitness score of.
+      * @return Float
+      */
      Float calculate(NeuralNetwork<ArrayList<Integer>> nn);
 }

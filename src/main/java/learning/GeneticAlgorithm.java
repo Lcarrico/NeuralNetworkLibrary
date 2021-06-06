@@ -15,9 +15,18 @@ import java.util.Random;
  */
 public class GeneticAlgorithm {
 
+    /**
+     * This Neural Network is the current network with the highest score.
+     * @see NeuralNetwork
+     */
     public NeuralNetwork<ArrayList<Integer>> bestNeuralNetwork;
 
     private final FitnessFunction scoring;
+
+    /**
+     * This list of floats will contain the current scores for the neural networks.
+     * @see FitnessFunction
+     */
     public ArrayList<Float> scores = new ArrayList<>();
     private ArrayList<NeuralNetwork<ArrayList<Integer>>> neuralNetworkArrayList;
     private NeuralNetwork<ArrayList<Integer>> base;

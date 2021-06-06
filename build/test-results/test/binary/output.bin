@@ -20,11 +20,11 @@
 	Layers =
 	[InputLayer, 
 	Hidden Layer{
-ˆ		nodes=[Node{weight=0.22685826}, Node{weight=0.71204907}, Node{weight=0.46068907}, Node{weight=0.49377352}, Node{weight=0.4871943}]}, 
+†		nodes=[Node{weight=0.4473297}, Node{weight=0.6739618}, Node{weight=0.7657919}, Node{weight=0.65376776}, Node{weight=0.37278962}]}, 
 	Hidden Layer{
-¶		nodes=[Node{weight=0.1388846}, Node{weight=0.21273804}, Node{weight=0.9395361}, Node{weight=0.19788975}, Node{weight=0.8022423}, Node{weight=0.9394142}, Node{weight=0.9105799}]}, 
+»		nodes=[Node{weight=0.82133806}, Node{weight=0.31523454}, Node{weight=0.69920623}, Node{weight=0.026268601}, Node{weight=0.8045166}, Node{weight=0.33574766}, Node{weight=0.14780855}]}, 
 	Hidden Layer{
-…		nodes=[Node{weight=0.9840379}, Node{weight=0.3004738}, Node{weight=0.9122174}, Node{weight=0.4958275}, Node{weight=0.6504759}]}], 
+ˆ		nodes=[Node{weight=0.7639843}, Node{weight=0.65098214}, Node{weight=0.99711066}, Node{weight=0.5040525}, Node{weight=0.45821548}]}], 
 	Output Layer = OutputLayer
 %Teaching the NN the AND expression.
 Training now...
@@ -33,20 +33,20 @@
 	Layers =
 	[InputLayer, 
 	Hidden Layer{
->		nodes=[Node{weight=0.7528196}, Node{weight=-0.43473005}]}, 
+=		nodes=[Node{weight=0.1662364}, Node{weight=0.70488876}]}, 
 	Hidden Layer{
-n		nodes=[Node{weight=0.7120341}, Node{weight=0.3407234}, Node{weight=1.2226882}, Node{weight=-0.27073675}]}, 
+n		nodes=[Node{weight=0.24082327}, Node{weight=0.30333877}, Node{weight=0.5809361}, Node{weight=1.1275387}]}, 
 	Hidden Layer{
-Ú		nodes=[Node{weight=0.025651991}, Node{weight=-0.045571268}, Node{weight=0.81828576}, Node{weight=1.1697651}, Node{weight=-0.10849953}, Node{weight=-0.47883022}, Node{weight=0.065859675}, Node{weight=-0.25644898}]}, 
+Ô		nodes=[Node{weight=-0.12533712}, Node{weight=0.98331887}, Node{weight=0.38766313}, Node{weight=0.44599843}, Node{weight=0.24703217}, Node{weight=-0.18334812}, Node{weight=0.2476579}, Node{weight=1.3606478}]}, 
 	Hidden Layer{
-&		nodes=[Node{weight=0.08425474}]}], 
+&		nodes=[Node{weight=0.06438488}]}], 
 $	Output Layer = RoundedOutputLayer
 
 Outputs from Best NN: 
 [0.0, 0.0] -> [0]
 [0.0, 1.0] -> [0]
 [1.0, 0.0] -> [0]
-[1.0, 1.0] -> [0]
+[1.0, 1.0] -> [1]
 Test Network
 	Layers =
 	[InputLayer, 

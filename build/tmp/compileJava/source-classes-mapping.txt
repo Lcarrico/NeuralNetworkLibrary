@@ -2,8 +2,8 @@ layers/Layer.java
  layers.Layer
 layers/HighestOutputLayer.java
  layers.HighestOutputLayer
-learning/FitnessFunction.java
- learning.FitnessFunction
+utils/NodeUtil.java
+ utils.NodeUtil
 layers/RoundedOutputLayer.java
  layers.RoundedOutputLayer
 layers/InputLayer.java
@@ -16,17 +16,25 @@ base/NeuralNetwork.java
  base.NeuralNetwork
 utils/ListUtil.java
  utils.ListUtil
-utils/NodeUtil.java
- utils.NodeUtil
+layers/package-info.java
+ layers.package-info
 utils/GeneticAlgorithmUtil.java
  utils.GeneticAlgorithmUtil
  utils.GeneticAlgorithmUtil$1
 utils/NodeGenerator.java
  utils.NodeGenerator
+utils/package-info.java
+ utils.package-info
 utils/FitnessFunctions.java
  utils.FitnessFunctions
  utils.FitnessFunctions$1
-learning/GeneticAlgorithm.java
- learning.GeneticAlgorithm
+learning/FitnessFunction.java
+ learning.FitnessFunction
+learning/package-info.java
+ learning.package-info
+base/package-info.java
+ base.package-info
 layers/HiddenLayer.java
  layers.HiddenLayer
+learning/GeneticAlgorithm.java
+ learning.GeneticAlgorithm

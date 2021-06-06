@@ -4,6 +4,10 @@ import layers.Node;
 
 import java.util.Random;
 
+/**
+ * This class is intended used to generate a Node with a random weight.
+ * @see Node
+ */
 public class NodeGenerator {
 
     /**

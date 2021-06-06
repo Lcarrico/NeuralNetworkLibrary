@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * This class will hold utility functions for the List interface.
+ * @see List
+ */
 public class ListUtil {
     /**
      * This method will convert any 2D array into a 2d ArrayList.

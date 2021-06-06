@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="learningTests.GeneticAlgorithmTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-06T02:36:35" hostname="DESKTOP-1CER5HD" time="0.013">
+  <properties/>
+  <testcase name="evolveTest()" classname="learningTests.GeneticAlgorithmTests" time="0.013"/>
+  <testcase name="mutateAllTest()" classname="learningTests.GeneticAlgorithmTests" time="0.0"/>
+  <system-out><![CDATA[Teaching the NN the AND expression.
+Training now...
+
+Best NN: Neural Network
+Layers =
+	[InputLayer, 
+	Hidden Layer{
+		nodes=[Node{weight=0.1662364}, Node{weight=0.70488876}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=0.24082327}, Node{weight=0.30333877}, Node{weight=0.5809361}, Node{weight=1.1275387}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=-0.12533712}, Node{weight=0.98331887}, Node{weight=0.38766313}, Node{weight=0.44599843}, Node{weight=0.24703217}, Node{weight=-0.18334812}, Node{weight=0.2476579}, Node{weight=1.3606478}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=0.06438488}]}], 
+	Output Layer = RoundedOutputLayer
+
+Outputs from Best NN: 
+[0.0, 0.0] -> [0]
+[0.0, 1.0] -> [0]
+[1.0, 0.0] -> [0]
+[1.0, 1.0] -> [1]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

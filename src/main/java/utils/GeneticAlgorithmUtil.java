@@ -80,7 +80,7 @@ public class GeneticAlgorithmUtil {
      * @param nn This parameter will be the neural network whose nodes will be mutated.
      * @param percent This parameter will be the percent of nodes to mutate.
      * @param magnitude This parameter will be the amount the nodes weights may change by.
-     * @return
+     * @return NeuralNetwork
      */
     public static NeuralNetwork<ArrayList<Integer>> mutate(NeuralNetwork<ArrayList<Integer>> nn, float percent, float magnitude){
         ArrayList<ArrayList<Node>> nodes = nn.getNodes();

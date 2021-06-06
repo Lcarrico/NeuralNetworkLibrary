@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="layersTests.InputLayerTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-06T02:36:35" hostname="DESKTOP-1CER5HD" time="0.005">
+  <properties/>
+  <testcase name="calc()" classname="layersTests.InputLayerTests" time="0.003"/>
+  <testcase name="getNodes()" classname="layersTests.InputLayerTests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
