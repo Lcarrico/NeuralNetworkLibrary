@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="baseTests.NeuralNetworkTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-06-06T02:36:35" hostname="DESKTOP-1CER5HD" time="0.077">
+  <properties/>
+  <testcase name="cloneTest()" classname="baseTests.NeuralNetworkTests" time="0.021"/>
+  <testcase name="calcTest()" classname="baseTests.NeuralNetworkTests" time="0.037"/>
+  <testcase name="addLayersTest()" classname="baseTests.NeuralNetworkTests" time="0.001"/>
+  <testcase name="calcAllTest()" classname="baseTests.NeuralNetworkTests" time="0.004"/>
+  <testcase name="getNodesTest()" classname="baseTests.NeuralNetworkTests" time="0.001"/>
+  <testcase name="toStringTest()" classname="baseTests.NeuralNetworkTests" time="0.002"/>
+  <testcase name="setNodesTest()" classname="baseTests.NeuralNetworkTests" time="0.003"/>
+  <system-out><![CDATA[Test Network
+Layers =
+	[InputLayer, 
+	Hidden Layer{
+		nodes=[Node{weight=0.5}, Node{weight=0.5}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=1.0}]}], 
+	Output Layer = RoundedOutputLayer
+Test Network
+Layers =
+	[InputLayer, 
+	Hidden Layer{
+		nodes=[Node{weight=0.5}, Node{weight=0.5}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=1.0}]}], 
+	Output Layer = RoundedOutputLayer
+[[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]]
+[[0], [1], [1], [2]]
+Neural Network
+Layers =
+	[InputLayer, 
+	Hidden Layer{
+		nodes=[Node{weight=0.4473297}, Node{weight=0.6739618}, Node{weight=0.7657919}, Node{weight=0.65376776}, Node{weight=0.37278962}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=0.82133806}, Node{weight=0.31523454}, Node{weight=0.69920623}, Node{weight=0.026268601}, Node{weight=0.8045166}, Node{weight=0.33574766}, Node{weight=0.14780855}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=0.7639843}, Node{weight=0.65098214}, Node{weight=0.99711066}, Node{weight=0.5040525}, Node{weight=0.45821548}]}], 
+	Output Layer = OutputLayer
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

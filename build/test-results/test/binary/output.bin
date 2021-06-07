@@ -1,26 +1,62 @@
-‚[-7.0, -1.0, -25.0, -1.0, -15.0, -31.0, -1.0, -5.0, -32.0, -2.0, -21.0, -2.0, -6.0, -11.0, -35.0, 0.0, -2.0, -1.0, -40.0, -69.0]
-„[-1.0, -15.0, -5.0, -1.0, -1.0, -20.0, -5.0, -1.0, -1.0, -43.0, -2.0, -13.0, -18.0, -20.0, -13.0, -16.0, -15.0, -32.0, -1.0, -2.0]
-}[-1.0, -9.0, -2.0, -14.0, -9.0, -20.0, -9.0, -2.0, -5.0, -2.0, -1.0, -2.0, -1.0, -2.0, -2.0, -13.0, -2.0, -5.0, -6.0, -2.0]
-~[-4.0, -17.0, -8.0, -2.0, -9.0, -9.0, -1.0, -5.0, -1.0, -6.0, -1.0, -4.0, -8.0, -10.0, -2.0, -2.0, -13.0, -18.0, -5.0, -9.0]
-{[-2.0, -1.0, -9.0, -4.0, -2.0, -2.0, -8.0, -5.0, -2.0, -4.0, -14.0, -5.0, -5.0, -6.0, -1.0, -2.0, -9.0, -1.0, -2.0, -4.0]
-|[-4.0, -4.0, -2.0, -2.0, -4.0, -6.0, -5.0, -5.0, -1.0, -1.0, -1.0, -4.0, -2.0, -8.0, -12.0, -10.0, -1.0, -1.0, -9.0, -2.0]
-{[-1.0, -2.0, -2.0, -10.0, -9.0, -2.0, -5.0, -2.0, -5.0, -1.0, -6.0, -1.0, -1.0, -2.0, -4.0, -4.0, -1.0, -1.0, -2.0, -5.0]
-{[-2.0, -1.0, -2.0, -1.0, -1.0, -4.0, -1.0, -2.0, -1.0, -2.0, -16.0, -2.0, -2.0, -1.0, -1.0, -1.0, -2.0, -1.0, -1.0, -2.0]
-z[-2.0, -1.0, -1.0, -2.0, -1.0, -1.0, -1.0, -1.0, -2.0, -1.0, -1.0, -1.0, -1.0, -1.0, -2.0, -1.0, -2.0, -1.0, -1.0, -1.0]
-y[-1.0, -2.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 0.0, -4.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -4.0, -1.0]
-Best NN: Neural Network
-	Layers =
-	[InputLayer, 
-	Hidden Layer{
-=		nodes=[Node{weight=0.6344574}, Node{weight=-0.8012175}]}, 
-	Hidden Layer{
-n		nodes=[Node{weight=0.84155214}, Node{weight=1.3836374}, Node{weight=-0.41228878}, Node{weight=0.730115}]}, 
-	Hidden Layer{
-Ô		nodes=[Node{weight=1.80085}, Node{weight=0.058322947}, Node{weight=0.0010176748}, Node{weight=0.07500201}, Node{weight=-0.28863177}, Node{weight=-0.54350543}, Node{weight=1.1419463}, Node{weight=1.6505605}]}, 
-	Hidden Layer{
-&		nodes=[Node{weight=-0.1513381}]}], 
-$	Output Layer = RoundedOutputLayer
-0 0 -> [0]
-0 1 -> [0]
-1 0 -> [0]
-1 1 -> [1]
+Test Network
+	Layers =
+	[InputLayer, 
+	Hidden Layer{
+0		nodes=[Node{weight=0.5}, Node{weight=0.5}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=1.0}]}], 
+$	Output Layer = RoundedOutputLayer
+Test Network
+	Layers =
+	[InputLayer, 
+	Hidden Layer{
+0		nodes=[Node{weight=0.5}, Node{weight=0.5}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=1.0}]}], 
+$	Output Layer = RoundedOutputLayer
+2[[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]]
+[[0], [1], [1], [2]]
+Neural Network
+	Layers =
+	[InputLayer, 
+	Hidden Layer{
+†		nodes=[Node{weight=0.4473297}, Node{weight=0.6739618}, Node{weight=0.7657919}, Node{weight=0.65376776}, Node{weight=0.37278962}]}, 
+	Hidden Layer{
+»		nodes=[Node{weight=0.82133806}, Node{weight=0.31523454}, Node{weight=0.69920623}, Node{weight=0.026268601}, Node{weight=0.8045166}, Node{weight=0.33574766}, Node{weight=0.14780855}]}, 
+	Hidden Layer{
+ˆ		nodes=[Node{weight=0.7639843}, Node{weight=0.65098214}, Node{weight=0.99711066}, Node{weight=0.5040525}, Node{weight=0.45821548}]}], 
+	Output Layer = OutputLayer
+%Teaching the NN the AND expression.
+Training now...
+
+Best NN: Neural Network
+	Layers =
+	[InputLayer, 
+	Hidden Layer{
+=		nodes=[Node{weight=0.1662364}, Node{weight=0.70488876}]}, 
+	Hidden Layer{
+n		nodes=[Node{weight=0.24082327}, Node{weight=0.30333877}, Node{weight=0.5809361}, Node{weight=1.1275387}]}, 
+	Hidden Layer{
+Ô		nodes=[Node{weight=-0.12533712}, Node{weight=0.98331887}, Node{weight=0.38766313}, Node{weight=0.44599843}, Node{weight=0.24703217}, Node{weight=-0.18334812}, Node{weight=0.2476579}, Node{weight=1.3606478}]}, 
+	Hidden Layer{
+&		nodes=[Node{weight=0.06438488}]}], 
+$	Output Layer = RoundedOutputLayer
+
+Outputs from Best NN: 
+[0.0, 0.0] -> [0]
+[0.0, 1.0] -> [0]
+[1.0, 0.0] -> [0]
+[1.0, 1.0] -> [1]
+Test Network
+	Layers =
+	[InputLayer, 
+	Hidden Layer{
+0		nodes=[Node{weight=0.5}, Node{weight=0.5}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=1.0}]}], 
+$	Output Layer = RoundedOutputLayer
+:Inputs: [[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]]
+(Expected Outputs: [[0], [1], [1], [0]]
+&Actual Outputs: [[0], [1], [1], [2]]
+-2.0
+[4.22, 3.14159, 2.15]

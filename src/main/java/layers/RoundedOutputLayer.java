@@ -1,8 +1,11 @@
 package layers;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
+/**
+ * This class is the output layer for a Neural Network where it
+ * returns the output rounded to the nearest integer.
+ */
 public class RoundedOutputLayer implements OutputLayer<ArrayList<Float>, ArrayList<Integer>>{
 
     @Override
