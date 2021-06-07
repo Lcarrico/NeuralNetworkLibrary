@@ -1,7 +1,10 @@
 package learningTests;
 
 import base.NeuralNetwork;
-import layers.*;
+import layers.HiddenLayer;
+import layers.HighestOutputLayer;
+import layers.InputLayer;
+import layers.RoundedOutputLayer;
 import learning.GeneticAlgorithm;
 import org.junit.jupiter.api.Test;
 import utils.FitnessFunctions;

@@ -6,15 +6,11 @@ import layers.InputLayer;
 import layers.Node;
 import layers.RoundedOutputLayer;
 import learning.FitnessFunction;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import utils.FitnessFunctions;
 import utils.ListUtil;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * This test class is for the FitnessFunctions class.
