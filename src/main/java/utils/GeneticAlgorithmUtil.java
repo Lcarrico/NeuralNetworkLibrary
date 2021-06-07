@@ -8,7 +8,17 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Random;
 
+/**
+ * This class will contain useful utility methods for the genetic algorithm class.
+ * @see learning.GeneticAlgorithm
+ */
 public class GeneticAlgorithmUtil {
+
+    /**
+     * This method will turn a 2d array of nodes into a single 1d array of nodes.
+     * @param nodes This parameter is the 2d array of nodes to convert.
+     * @return List of Node's
+     */
     public static ArrayList<Node> flattenNodes(ArrayList<ArrayList<Node>> nodes){
         ArrayList<Node> flattenedNodeList = new ArrayList<Node>();
         for (ArrayList<Node> nodeArray: nodes) {
@@ -17,6 +27,12 @@ public class GeneticAlgorithmUtil {
         return flattenedNodeList;
     }
 
+    /**
+     * This method will grab a random sample from a list of nodes.
+     * @param nodes This parameter is the list of nodes provided to sample from.
+     * @param percent This parameter is the percent of nodes to sample.
+     * @return List of Node's
+     */
     public static ArrayList<Node> getSampleNodes(ArrayList<Node> nodes, Float percent){
         int sampleAmount = Math.round(nodes.size() * percent);
         Random random = new Random();
@@ -34,6 +50,12 @@ public class GeneticAlgorithmUtil {
         return sampledNodes;
     }
 
+    /**
+     * This method will return a random sample of the indices of the list provided.
+     * @param nodes This parameter will be the list of nodes provided to sample from.
+     * @param percent This parameter is the percent of indices to sample.
+     * @return List of Integer's
+     */
     public static ArrayList<Integer> getSampleIndices(ArrayList<Node> nodes, Float percent){
         int sampleAmount = Math.round(nodes.size() * percent);
         Random random = new Random();
@@ -51,6 +73,15 @@ public class GeneticAlgorithmUtil {
     }
 
 
+    /**
+     * This method will mutate or change the weights of the nodes of a Neural Network based on
+     * the percent of nodes of a networks and the magnitude or the amount to change
+     * the individual nodes by.
+     * @param nn This parameter will be the neural network whose nodes will be mutated.
+     * @param percent This parameter will be the percent of nodes to mutate.
+     * @param magnitude This parameter will be the amount the nodes weights may change by.
+     * @return NeuralNetwork
+     */
     public static NeuralNetwork<ArrayList<Integer>> mutate(NeuralNetwork<ArrayList<Integer>> nn, float percent, float magnitude){
         ArrayList<ArrayList<Node>> nodes = nn.getNodes();
         ArrayList<Node> flattenedNodes = GeneticAlgorithmUtil.flattenNodes(nodes);
@@ -79,6 +110,13 @@ public class GeneticAlgorithmUtil {
         return nn;
     }
 
+    /**
+     * This method will create a child neural network from two neural networks
+     * by randomly selecting nodes from both parents.
+     * @param nn1 This parameter is the first neural network parent.
+     * @param nn2 This parameter is the second neural network parent.
+     * @return NeuralNetwork
+     */
     public static NeuralNetwork<ArrayList<Integer>> crossover(NeuralNetwork<ArrayList<Integer>> nn1, NeuralNetwork<ArrayList<Integer>> nn2){
         NeuralNetwork<ArrayList<Integer>> child = nn1.clone();
 
@@ -110,6 +148,9 @@ public class GeneticAlgorithmUtil {
         return child;
     }
 
+    /**
+     * This comparator will be used to sort a list of floats descending.
+     */
     public static Comparator<Float> floatReverseComparator = new Comparator<Float>() {
         @Override
         public int compare(Float o1, Float o2) {

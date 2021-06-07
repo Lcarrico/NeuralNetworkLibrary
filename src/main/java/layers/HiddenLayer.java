@@ -5,16 +5,36 @@ import utils.NodeGenerator;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+/**
+ * This class is the hidden layer for the Neural Network.
+ * The majority of the weights and computation will be held and done within this layer.
+ */
 public class HiddenLayer implements Layer<ArrayList<Float>>{
 
-    String name;
-    ArrayList<Node> nodes = new ArrayList<>();
+    private final String name;
+    private ArrayList<Node> nodes = new ArrayList<>();
 
+    /**
+     * This constructor instantiates the HiddenLayer with the provided number of nodes
+     * and sets the Layer name to <i>Hidden Layer</i>.
+     * Node weights will be randomly generated floats between 0 and 1.
+     *
+     * @param numNodes This parameter will be the number of nodes for this hidden layer.
+     * @see Node
+     */
     public HiddenLayer(int numNodes){
         this.name = "Hidden Layer";
         generateNodes(numNodes);
     }
 
+    /**
+     * This constructor instantiates the HiddenLayer with the provided number of nodes
+     * and sets the Layer name to the name provided.
+     * Node weights will be randomly generated floats between 0 and 1.
+     *
+     * @param name This parameter will be the name of this hidden layer.
+     * @param numNodes This parameter will be the number of nodes for this hidden layer.
+     */
     public HiddenLayer(String name, int numNodes){
         this.name = name;
         generateNodes(numNodes);

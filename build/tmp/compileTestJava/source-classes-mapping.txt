@@ -1,16 +1,24 @@
-layers/HiddenLayerTests.java
+layersTests/package-info.java
+ layersTests.package-info
+layersTests/OutputLayerTests.java
+ layersTests.OutputLayerTests
+baseTests/package-info.java
+ baseTests.package-info
+layersTests/HiddenLayerTests.java
  layers.HiddenLayerTests
-layers/OutputLayerTests.java
- layers.OutputLayerTests
-utils/NodeGeneratorTests.java
- utils.NodeGeneratorTests
-layers/InputLayerTests.java
- layers.InputLayerTests
-base/NeuralNetworkTests.java
- base.NeuralNetworkTests
-learning/GeneticAlgorithmTests.java
- learning.GeneticAlgorithmTests
-utils/GeneticAlgorithmUtilTests.java
- utils.GeneticAlgorithmUtilTests
-utils/FitnessFunctionsTests.java
- utils.FitnessFunctionsTests
+utilsTests/NodeGeneratorTests.java
+ utilsTests.NodeGeneratorTests
+utilsTests/package-info.java
+ utilsTests.package-info
+layersTests/InputLayerTests.java
+ layersTests.InputLayerTests
+learningTests/package-info.java
+ learningTests.package-info
+utilsTests/GeneticAlgorithmUtilTests.java
+ utilsTests.GeneticAlgorithmUtilTests
+learningTests/GeneticAlgorithmTests.java
+ learningTests.GeneticAlgorithmTests
+baseTests/NeuralNetworkTests.java
+ baseTests.NeuralNetworkTests
+utilsTests/FitnessFunctionsTests.java
+ utilsTests.FitnessFunctionsTests

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="utilsTests.GeneticAlgorithmUtilTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-06-06T02:36:35" hostname="DESKTOP-1CER5HD" time="0.028">
+  <properties/>
+  <testcase name="mutate()" classname="utilsTests.GeneticAlgorithmUtilTests" time="0.004"/>
+  <testcase name="getSampleNodes()" classname="utilsTests.GeneticAlgorithmUtilTests" time="0.005"/>
+  <testcase name="floatReverseComparatorTest()" classname="utilsTests.GeneticAlgorithmUtilTests" time="0.008"/>
+  <testcase name="flattenNodesTest()" classname="utilsTests.GeneticAlgorithmUtilTests" time="0.001"/>
+  <testcase name="crossover()" classname="utilsTests.GeneticAlgorithmUtilTests" time="0.002"/>
+  <system-out><![CDATA[[4.22, 3.14159, 2.15]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

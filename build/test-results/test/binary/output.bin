@@ -1,21 +1,62 @@
-%Teaching the NN the AND expression.
-Training now...
-
-Best NN: Neural Network
-	Layers =
-	[InputLayer, 
-	Hidden Layer{
-<		nodes=[Node{weight=1.3191371}, Node{weight=1.6482621}]}, 
-	Hidden Layer{
-q		nodes=[Node{weight=1.2459452}, Node{weight=-0.21125233}, Node{weight=-0.038500488}, Node{weight=1.5660644}]}, 
-	Hidden Layer{
-Ö		nodes=[Node{weight=1.0763626}, Node{weight=-0.25160408}, Node{weight=0.49459714}, Node{weight=-0.0012969971}, Node{weight=1.2837045}, Node{weight=0.39393097}, Node{weight=-0.023167253}, Node{weight=0.928067}]}, 
-	Hidden Layer{
-(		nodes=[Node{weight=-0.018441916}]}], 
-$	Output Layer = RoundedOutputLayer
-
-Outputs from Best NN: 
-[0.0, 0.0] -> [0]
-[0.0, 1.0] -> [-1]
-[1.0, 0.0] -> [-1]
-[1.0, 1.0] -> [-1]
+Test Network
+	Layers =
+	[InputLayer, 
+	Hidden Layer{
+0		nodes=[Node{weight=0.5}, Node{weight=0.5}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=1.0}]}], 
+$	Output Layer = RoundedOutputLayer
+Test Network
+	Layers =
+	[InputLayer, 
+	Hidden Layer{
+0		nodes=[Node{weight=0.5}, Node{weight=0.5}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=1.0}]}], 
+$	Output Layer = RoundedOutputLayer
+2[[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]]
+[[0], [1], [1], [2]]
+Neural Network
+	Layers =
+	[InputLayer, 
+	Hidden Layer{
+†		nodes=[Node{weight=0.4473297}, Node{weight=0.6739618}, Node{weight=0.7657919}, Node{weight=0.65376776}, Node{weight=0.37278962}]}, 
+	Hidden Layer{
+»		nodes=[Node{weight=0.82133806}, Node{weight=0.31523454}, Node{weight=0.69920623}, Node{weight=0.026268601}, Node{weight=0.8045166}, Node{weight=0.33574766}, Node{weight=0.14780855}]}, 
+	Hidden Layer{
+ˆ		nodes=[Node{weight=0.7639843}, Node{weight=0.65098214}, Node{weight=0.99711066}, Node{weight=0.5040525}, Node{weight=0.45821548}]}], 
+	Output Layer = OutputLayer
+%Teaching the NN the AND expression.
+Training now...
+
+Best NN: Neural Network
+	Layers =
+	[InputLayer, 
+	Hidden Layer{
+=		nodes=[Node{weight=0.1662364}, Node{weight=0.70488876}]}, 
+	Hidden Layer{
+n		nodes=[Node{weight=0.24082327}, Node{weight=0.30333877}, Node{weight=0.5809361}, Node{weight=1.1275387}]}, 
+	Hidden Layer{
+Ô		nodes=[Node{weight=-0.12533712}, Node{weight=0.98331887}, Node{weight=0.38766313}, Node{weight=0.44599843}, Node{weight=0.24703217}, Node{weight=-0.18334812}, Node{weight=0.2476579}, Node{weight=1.3606478}]}, 
+	Hidden Layer{
+&		nodes=[Node{weight=0.06438488}]}], 
+$	Output Layer = RoundedOutputLayer
+
+Outputs from Best NN: 
+[0.0, 0.0] -> [0]
+[0.0, 1.0] -> [0]
+[1.0, 0.0] -> [0]
+[1.0, 1.0] -> [1]
+Test Network
+	Layers =
+	[InputLayer, 
+	Hidden Layer{
+0		nodes=[Node{weight=0.5}, Node{weight=0.5}]}, 
+	Hidden Layer{
+		nodes=[Node{weight=1.0}]}], 
+$	Output Layer = RoundedOutputLayer
+:Inputs: [[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]]
+(Expected Outputs: [[0], [1], [1], [0]]
+&Actual Outputs: [[0], [1], [1], [2]]
+-2.0
+[4.22, 3.14159, 2.15]
