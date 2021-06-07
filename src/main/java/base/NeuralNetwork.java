@@ -4,7 +4,6 @@ import layers.Layer;
 import layers.Node;
 import layers.OutputLayer;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**

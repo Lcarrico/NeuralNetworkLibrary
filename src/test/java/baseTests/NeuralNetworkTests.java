@@ -9,7 +9,6 @@ import utils.ListUtil;
 import utils.NodeUtil;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This test class is for the Neural Network class.

@@ -1,7 +1,5 @@
 package layers;
 
-import java.util.ArrayList;
-
 /**
  * This interface will be the final layer or the output layer for the Neural Network.
  * Any final conversions or type change should be done here.

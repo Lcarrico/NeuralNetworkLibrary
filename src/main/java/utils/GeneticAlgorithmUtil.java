@@ -1,7 +1,6 @@
 package utils;
 
 import base.NeuralNetwork;
-import layers.Layer;
 import layers.Node;
 
 import java.util.ArrayList;
